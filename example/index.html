@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="resources/styles/common.css">
+		<script type="text/javascript" src="resources/scripts/jquery-1.10.2.min.js"></script>
+		
+		<link rel="stylesheet" type="text/css" href="resources/styles/jquery.chart.css">
+		<script type="text/javascript" src="resources/scripts/jquery.chart.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				var data = { 
+					"1월" : 40, 
+					"2월" : 30, 
+					"3월" : 70, 
+					"4월" : 100, 
+					"5월" : 140, 
+					"6월" : 180, 
+					"7월" : 200, 
+					"8월" : 160, 
+					"9월" : 100, 
+					"10월" : 60, 
+					"11월" : 40, 
+					"12월" : 60 
+				};
+
+				$('#chart').chart({
+					// url: './data.json', // ajax 통신을 통하여 가져옴
+					data: data, // json 데이터로 불러오기
+					width: '800px',
+					height: '500px',
+					minValue: 0,
+					maxValue: 250,
+					step: 50
+				});
+				
+				$('input.changeSize').click(function() {
+					$('#chart').chart({
+						data: data,
+						width: $('input.width').val(),
+						height: $('input.height').val(),
+						minValue: 0,
+						maxValue: 250,
+						step: 50
+					});
+				});
+				
+				$('input.changeData').click(function() {
+					for (var i=0; i<12; i++ ) {
+						data[i+'월'] = Math.random()*250;
+					}
+					
+					$('#chart').chart({
+						data: data,
+						width: $('input.width').val(),
+						height: $('input.height').val(),
+						minValue: 0,
+						maxValue: 250,
+						step: 50
+					});
+				});
+			});
+		</script>
+	</head>
+	
+	<body>
+		<div id="chart">
+		</div>
+		<label>가로: <input class='width' type='text' value='800px'></label>
+		<label>세로: <input class='height' type='text' value='500px'></label>
+		<input class='changeSize' type='submit' value='사이즈 변경'>
+		<input class='changeData' type='submit' value='데이터 변경'>
+	</body>
+</html>

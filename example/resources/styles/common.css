@@ -1,0 +1,9 @@
+
+@charset "utf-8";
+
+body, html { 
+	margin: 0;
+	padding: 20px;
+	font-size: 9pt;
+	font-family: 'Nanum Gothic', sans-serif;
+}

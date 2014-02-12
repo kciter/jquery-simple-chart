@@ -1,0 +1,45 @@
+
+@charset "utf-8";
+
+.chart {
+	position: relative;
+	display: block;
+	margin: 10px;
+}
+
+.chart .base {
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+.chart .overlay {
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+.chart .xaxis {
+	position: relative;
+}
+
+.chart .xaxis .xaxisData {
+	position: absolute;
+	font-size: 9pt;
+	font-family: 'Nanum Gothic', '맑은 고딕', sans-serif;
+	text-align: center;
+}
+
+.chart .yaxis {
+	position: relative;
+	text-align: center;
+	line-height: 0px;
+}
+
+.chart .yaxis .yaxisData {
+	position: absolute;
+	font-size: 9pt;
+	font-family: 'Nanum Gothic', '맑은 고딕', sans-serif;
+}
+.chart .data {
+	display: none;
+}
